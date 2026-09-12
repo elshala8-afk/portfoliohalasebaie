@@ -13,8 +13,8 @@
   body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Work Sans',sans-serif; }
 
   .topbar{
-    position:fixed; top:0; left:0; right:0; z-index:40; display:flex; align-items:center; justify-content:space-between;
-    padding:22px 6vw; pointer-events:none;
+    position:relative; width:100%; z-index:40; display:flex; align-items:center; justify-content:space-between;
+    padding:22px 6vw;
   }
   .topbar > *{ pointer-events:auto; }
   .back-link{
@@ -59,7 +59,7 @@
     flex:1; min-width:0; position:relative; background-color:#fdf6e5;
     background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNDAgMTAwMCIgd2lkdGg9IjM0MCIgaGVpZ2h0PSIxMDAwIj4KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZkZjZlNSIvPgo8cG9seWxpbmUgcG9pbnRzPSIzOC43LDAgMzguOSwxMCAzOS4yLDIwIDM5LjQsMzAgMzkuNiw0MCAzOS44LDUwIDM5LjksNjAgNDAuMSw3MCA0MC4yLDgwIDQwLjMsOTAgNDAuMywxMDAgNDAuNCwxMTAgNDAuNCwxMjAgNDAuNCwxMzAgNDAuMywxNDAgNDAuMywxNTAgNDAuMiwxNjAgNDAuMSwxNzAgMzkuOSwxODAgMzkuOCwxOTAgMzkuNiwyMDAgMzkuNCwyMTAgMzkuMSwyMjAgMzguOSwyMzAgMzguNiwyNDAgMzguMywyNTAgMzguMCwyNjAgMzcuNywyNzAgMzcuNCwyODAgMzcuMSwyOTAgMzYuNywzMDAgMzYuMywzMTAgMzYuMCwzMjAgMzUuNiwzMzAgMzUuMiwzNDAgMzQuOCwzNTAgMzQuNCwzNjAgMzQuMCwzNzAgMzMuNiwzODAgMzMuMiwzOTAgMzIuOCw0MDAgMzIuNCw0MTAgMzIuMCw0MjAgMzEuNiw0MzAgMzEuMyw0NDAgMzAuOSw0NTAgMzAuNiw0NjAgMzAuMiw0NzAgMjkuOSw0ODAgMjkuNiw0OTAgMjkuMyw1MDAgMjkuMSw1MTAgMjguOCw1MjAgMjguNiw1MzAgMjguNCw1NDAgMjguMiw1NTAgMjguMSw1NjAgMjcuOSw1NzAgMjcuOCw1ODAgMjcuNyw1OTAgMjcuNyw2MDAgMjcuNiw2MTAgMjcuNiw2MjAgMjcuNiw2MzAgMjcuNyw2NDAgMjcuNyw2NTAgMjcuOCw2NjAgMjcuOSw2NzAgMjguMSw2ODAgMjguMiw2OTAgMjguNCw3MDAgMjguNiw3MTAgMjguOSw3MjAgMjkuMSw3MzAgMjkuNCw3NDAgMjkuNyw3NTAgMzAuMCw3NjAgMzAuMyw3NzAgMzAuNiw3ODAgMzAuOSw3OTAgMzEuMyw4MDAgMzEuNyw4MTAgMzIuMCw4MjAgMzIuNCw4MzAgMzIuOCw4NDAgMzMuMiw4NTAgMzMuNiw4NjAgMzQuMCw4NzAgMzQuNCw4ODAgMzQuOCw4OTAgMzUuMiw5MDAgMzUuNiw5MTAgMzYuMCw5MjAgMzYuNCw5MzAgMzYuNyw5NDAgMzcuMSw5NTAgMzcuNCw5NjAgMzcuOCw5NzAgMzguMSw5ODAgMzguNCw5OTAgMzguNywxMDAwIiBmaWxsPSJub25lIiBzdHJva2U9IiM1YzdhNGEiIHN0cm9rZS13aWR0aD0iNC41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBvbHlsaW5lIHBvaW50cz0iOTkuMSwwIDk4LjUsMTAgOTcuOSwyMCA5Ny40LDMwIDk3LjAsNDAgOTYuNyw1MCA5Ni40LDYwIDk2LjIsNzAgOTYuMSw4MCA5Ni4xLDkwIDk2LjIsMTAwIDk2LjQsMTEwIDk2LjcsMTIwIDk3LjAsMTMwIDk3LjUsMTQwIDk4LjAsMTUwIDk4LjYsMTYwIDk5LjIsMTcwIDk5LjksMTgwIDEwMC42LDE5MCAxMDEuMywyMDAgMTAyLjAsMjEwIDEwMi44LDIyMCAxMDMuNSwyMzAgMTA0LjIsMjQwIDEwNC45LDI1MCAxMDUuNSwyNjAgMTA2LjEsMjcwIDEwNi42LDI4MCAxMDcuMCwyOTAgMTA3LjMsMzAwIDEwNy42LDMxMCAxMDcuOCwzMjAgMTA3LjksMzMwIDEwNy45LDM0MCAxMDcuOCwzNTAgMTA3LjYsMzYwIDEwNy4zLDM3MCAxMDcuMCwzODAgMTA2LjUsMzkwIDEwNi4wLDQwMCAxMDUuNCw0MTAgMTA0LjgsNDIwIDEwNC4xLDQzMCAxMDMuNCw0NDAgMTAyLjcsNDUwIDEwMi4wLDQ2MCAxMDEuMiw0NzAgMTAwLjUsNDgwIDk5LjgsNDkwIDk5LjEsNTAwIDk4LjUsNTEwIDk3LjksNTIwIDk3LjQsNTMwIDk3LjAsNTQwIDk2LjcsNTUwIDk2LjQsNTYwIDk2LjIsNTcwIDk2LjEsNTgwIDk2LjEsNTkwIDk2LjIsNjAwIDk2LjQsNjEwIDk2LjcsNjIwIDk3LjAsNjMwIDk3LjUsNjQwIDk4LjAsNjUwIDk4LjYsNjYwIDk5LjIsNjcwIDk5LjksNjgwIDEwMC42LDY5MCAxMDEuMyw3MDAgMTAyLjAsNzEwIDEwMi44LDcyMCAxMDMuNSw3MzAgMTA0LjIsNzQwIDEwNC45LDc1MCAxMDUuNSw3NjAgMTA2LjEsNzcwIDEwNi42LDc4MCAxMDcuMCw3OTAgMTA3LjMsODAwIDEwNy42LDgxMCAxMDcuOCw4MjAgMTA3LjksODMwIDEwNy45LDg0MCAxMDcuOCw4NTAgMTA3LjYsODYwIDEwNy4zLDg3MCAxMDcuMCw4ODAgMTA2LjUsODkwIDEwNi4wLDkwMCAxMDUuNCw5MTAgMTA0LjgsOTIwIDEwNC4xLDkzMCAxMDMuNCw5NDAgMTAyLjcsOTUwIDEwMi4wLDk2MCAxMDEuMiw5NzAgMTAwLjUsOTgwIDk5LjgsOTkwIDk5LjEsMTAwMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWM3YTRhIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjxwb2x5bGluZSBwb2ludHM9IjE2Ni41LDAgMTY2LjgsMTAgMTY3LjIsMjAgMTY3LjYsMzAgMTY4LjAsNDAgMTY4LjQsNTAgMTY4LjksNjAgMTY5LjQsNzAgMTY5LjksODAgMTcwLjQsOTAgMTcwLjksMTAwIDE3MS40LDExMCAxNzEuOSwxMjAgMTcyLjMsMTMwIDE3Mi43LDE0MCAxNzMuMSwxNTAgMTczLjQsMTYwIDE3My42LDE3MCAxNzMuOCwxODAgMTc0LjAsMTkwIDE3NC4wLDIwMCAxNzQuMCwyMTAgMTc0LjAsMjIwIDE3My45LDIzMCAxNzMuNywyNDAgMTczLjUsMjUwIDE3My4yLDI2MCAxNzIuOCwyNzAgMTcyLjQsMjgwIDE3Mi4wLDI5MCAxNzEuNiwzMDAgMTcxLjEsMzEwIDE3MC42LDMyMCAxNzAuMSwzMzAgMTY5LjYsMzQwIDE2OS4xLDM1MCAxNjguNiwzNjAgMTY4LjEsMzcwIDE2Ny43LDM4MCAxNjcuMywzOTAgMTY2LjksNDAwIDE2Ni42LDQxMCAxNjYuNCw0MjAgMTY2LjIsNDMwIDE2Ni4wLDQ0MCAxNjYuMCw0NTAgMTY2LjAsNDYwIDE2Ni4wLDQ3MCAxNjYuMSw0ODAgMTY2LjMsNDkwIDE2Ni41LDUwMCAxNjYuOCw1MTAgMTY3LjIsNTIwIDE2Ny42LDUzMCAxNjguMCw1NDAgMTY4LjQsNTUwIDE2OC45LDU2MCAxNjkuNCw1NzAgMTY5LjksNTgwIDE3MC40LDU5MCAxNzAuOSw2MDAgMTcxLjQsNjEwIDE3MS45LDYyMCAxNzIuMyw2MzAgMTcyLjcsNjQwIDE3My4xLDY1MCAxNzMuNCw2NjAgMTczLjYsNjcwIDE3My44LDY4MCAxNzQuMCw2OTAgMTc0LjAsNzAwIDE3NC4wLDcxMCAxNzQuMCw3MjAgMTczLjksNzMwIDE3My43LDc0MCAxNzMuNSw3NTAgMTczLjIsNzYwIDE3Mi44LDc3MCAxNzIuNCw3ODAgMTcyLjAsNzkwIDE3MS42LDgwMCAxNzEuMSw4MTAgMTcwLjYsODIwIDE3MC4xLDgzMCAxNjkuNiw4NDAgMTY5LjEsODUwIDE2OC42LDg2MCAxNjguMSw4NzAgMTY3LjcsODgwIDE2Ny4zLDg5MCAxNjYuOSw5MDAgMTY2LjYsOTEwIDE2Ni40LDkyMCAxNjYuMiw5MzAgMTY2LjAsOTQwIDE2Ni4wLDk1MCAxNjYuMCw5NjAgMTY2LjAsOTcwIDE2Ni4xLDk4MCAxNjYuMyw5OTAgMTY2LjUsMTAwMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWM3YTRhIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjxwb2x5bGluZSBwb2ludHM9IjI0My44LDAgMjQzLjksMTAgMjQ0LjAsMjAgMjQ0LjEsMzAgMjQ0LjIsNDAgMjQ0LjIsNTAgMjQ0LjIsNjAgMjQ0LjIsNzAgMjQ0LjEsODAgMjQ0LjEsOTAgMjQ0LjAsMTAwIDI0My45LDExMCAyNDMuNywxMjAgMjQzLjYsMTMwIDI0My40LDE0MCAyNDMuMiwxNTAgMjQzLjAsMTYwIDI0Mi43LDE3MCAyNDIuNSwxODAgMjQyLjIsMTkwIDI0MS45LDIwMCAyNDEuNiwyMTAgMjQxLjMsMjIwIDI0MC45LDIzMCAyNDAuNiwyNDAgMjQwLjIsMjUwIDIzOS45LDI2MCAyMzkuNSwyNzAgMjM5LjEsMjgwIDIzOC43LDI5MCAyMzguMywzMDAgMjM3LjksMzEwIDIzNy41LDMyMCAyMzcuMiwzMzAgMjM2LjgsMzQwIDIzNi40LDM1MCAyMzYuMCwzNjAgMjM1LjcsMzcwIDIzNS4zLDM4MCAyMzUuMCwzOTAgMjM0LjYsNDAwIDIzNC4zLDQxMCAyMzQuMCw0MjAgMjMzLjcsNDMwIDIzMy40LDQ0MCAyMzMuMiw0NTAgMjMyLjksNDYwIDIzMi43LDQ3MCAyMzIuNSw0ODAgMjMyLjQsNDkwIDIzMi4yLDUwMCAyMzIuMSw1MTAgMjMyLjAsNTIwIDIzMS45LDUzMCAyMzEuOCw1NDAgMjMxLjgsNTUwIDIzMS44LDU2MCAyMzEuOCw1NzAgMjMxLjksNTgwIDIzMS45LDU5MCAyMzIuMCw2MDAgMjMyLjEsNjEwIDIzMi4zLDYyMCAyMzIuNCw2MzAgMjMyLjYsNjQwIDIzMi44LDY1MCAyMzMuMCw2NjAgMjMzLjMsNjcwIDIzMy41LDY4MCAyMzMuOCw2OTAgMjM0LjEsNzAwIDIzNC40LDcxMCAyMzQuNyw3MjAgMjM1LjEsNzMwIDIzNS40LDc0MCAyMzUuOCw3NTAgMjM2LjEsNzYwIDIzNi41LDc3MCAyMzYuOSw3ODAgMjM3LjMsNzkwIDIzNy43LDgwMCAyMzguMSw4MTAgMjM4LjUsODIwIDIzOC44LDgzMCAyMzkuMiw4NDAgMjM5LjYsODUwIDI0MC4wLDg2MCAyNDAuMyw4NzAgMjQwLjcsODgwIDI0MS4wLDg5MCAyNDEuNCw5MDAgMjQxLjcsOTEwIDI0Mi4wLDkyMCAyNDIuMyw5MzAgMjQyLjYsOTQwIDI0Mi44LDk1MCAyNDMuMSw5NjAgMjQzLjMsOTcwIDI0My41LDk4MCAyNDMuNiw5OTAgMjQzLjgsMTAwMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWM3YTRhIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjxwb2x5bGluZSBwb2ludHM9IjMwMS4wLDAgMzAxLjQsMTAgMzAxLjksMjAgMzAyLjQsMzAgMzAzLjEsNDAgMzAzLjcsNTAgMzA0LjQsNjAgMzA1LjEsNzAgMzA1LjksODAgMzA2LjYsOTAgMzA3LjMsMTAwIDMwOC4wLDExMCAzMDguNywxMjAgMzA5LjQsMTMwIDMwOS45LDE0MCAzMTAuNCwxNTAgMzEwLjksMTYwIDMxMS4zLDE3MCAzMTEuNiwxODAgMzExLjgsMTkwIDMxMS45LDIwMCAzMTEuOSwyMTAgMzExLjgsMjIwIDMxMS42LDIzMCAzMTEuNCwyNDAgMzExLjAsMjUwIDMxMC42LDI2MCAzMTAuMSwyNzAgMzA5LjYsMjgwIDMwOC45LDI5MCAzMDguMywzMDAgMzA3LjYsMzEwIDMwNi45LDMyMCAzMDYuMSwzMzAgMzA1LjQsMzQwIDMwNC43LDM1MCAzMDQuMCwzNjAgMzAzLjMsMzcwIDMwMi42LDM4MCAzMDIuMSwzOTAgMzAxLjYsNDAwIDMwMS4xLDQxMCAzMDAuNyw0MjAgMzAwLjQsNDMwIDMwMC4yLDQ0MCAzMDAuMSw0NTAgMzAwLjEsNDYwIDMwMC4yLDQ3MCAzMDAuNCw0ODAgMzAwLjYsNDkwIDMwMS4wLDUwMCAzMDEuNCw1MTAgMzAxLjksNTIwIDMwMi40LDUzMCAzMDMuMSw1NDAgMzAzLjcsNTUwIDMwNC40LDU2MCAzMDUuMSw1NzAgMzA1LjksNTgwIDMwNi42LDU5MCAzMDcuMyw2MDAgMzA4LjAsNjEwIDMwOC43LDYyMCAzMDkuNCw2MzAgMzA5LjksNjQwIDMxMC40LDY1MCAzMTAuOSw2NjAgMzExLjMsNjcwIDMxMS42LDY4MCAzMTEuOCw2OTAgMzExLjksNzAwIDMxMS45LDcxMCAzMTEuOCw3MjAgMzExLjYsNzMwIDMxMS40LDc0MCAzMTEuMCw3NTAgMzEwLjYsNzYwIDMxMC4xLDc3MCAzMDkuNiw3ODAgMzA4LjksNzkwIDMwOC4zLDgwMCAzMDcuNiw4MTAgMzA2LjksODIwIDMwNi4xLDgzMCAzMDUuNCw4NDAgMzA0LjcsODUwIDMwNC4wLDg2MCAzMDMuMyw4NzAgMzAyLjYsODgwIDMwMi4xLDg5MCAzMDEuNiw5MDAgMzAxLjEsOTEwIDMwMC43LDkyMCAzMDAuNCw5MzAgMzAwLjIsOTQwIDMwMC4xLDk1MCAzMDAuMSw5NjAgMzAwLjIsOTcwIDMwMC40LDk4MCAzMDAuNiw5OTAgMzAxLjAsMTAwMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWM3YTRhIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPg==); background-size:200px auto; background-repeat:repeat;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
-    padding:8vh 3vw 6vh;
+    padding:8vh 3vw 6vh; overflow-x:auto; -webkit-overflow-scrolling:touch;
   }
 
   .story-more-btn{
@@ -131,9 +131,10 @@
 
   @media (max-width:900px){
     .story-section{ flex-direction:column; }
-    .story-left{ flex:none; padding:max(10vh, 100px) 6vw 3vh; }
+    .story-left{ flex:none; padding:max(10vh, 100px) 6vw 3vh; background-image:none; }
     .story-right{
       padding:2vh 0 6vh; overflow-x:auto; -webkit-overflow-scrolling:touch;
+      background-image:none;
       display:flex; align-items:center;
     }
     .story-journey{ padding:0 6vw; }
@@ -262,7 +263,8 @@
     });
     const dots = Array.from(dotsWrap.children);
 
-    function goTo(idx){
+    function goTo(idx, opts){
+      opts = opts || {};
       const target = Math.max(0, Math.min(cities.length - 1, idx));
       if(target === current) return;
       current = target;
@@ -287,14 +289,46 @@
         pointLabel.innerHTML = labelHtml ? labelHtml.innerHTML : '';
         pointLabel.classList.add('visible');
       }, 200);
+
+      if(opts.scrollTo !== false){
+        const storyRight = track.closest('.story-right');
+        if(storyRight){
+          isSyncScrolling = true;
+          const cityEl = cities[current];
+          const targetScroll = cityEl.offsetLeft + track.offsetLeft - (storyRight.clientWidth/2);
+          storyRight.scrollTo({ left: targetScroll, behavior:'smooth' });
+          setTimeout(()=>{ isSyncScrolling = false; }, 500);
+        }
+      }
     }
 
+    let isSyncScrolling = false;
     prevBtn.addEventListener('click', ()=> goTo(current-1));
     nextBtn.addEventListener('click', ()=> goTo(current+1));
-    window.addEventListener('resize', ()=>{ const c = current; current = -1; goTo(c); });
+    window.addEventListener('resize', ()=>{ const c = current; current = -1; goTo(c, {scrollTo:false}); });
     cities.forEach((city, i)=> city.addEventListener('click', ()=> goTo(i)));
 
-    goTo(0);
+    // travel with scroll: as the user scrolls the frieze, the character and text follow along
+    const storyRightEl = track.closest('.story-right');
+    if(storyRightEl){
+      let scrollDebounce;
+      storyRightEl.addEventListener('scroll', ()=>{
+        if(isSyncScrolling) return;
+        clearTimeout(scrollDebounce);
+        scrollDebounce = setTimeout(()=>{
+          const containerCenter = storyRightEl.scrollLeft + storyRightEl.clientWidth/2;
+          let closest = 0, closestDist = Infinity;
+          cities.forEach((city, i)=>{
+            const cityCenter = city.offsetLeft + track.offsetLeft;
+            const dist = Math.abs(cityCenter - containerCenter);
+            if(dist < closestDist){ closestDist = dist; closest = i; }
+          });
+          if(closest !== current) goTo(closest, {scrollTo:false});
+        }, 80);
+      });
+    }
+
+    goTo(0, {scrollTo:false});
   })();
 
   (function(){
