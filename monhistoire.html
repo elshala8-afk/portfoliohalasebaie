@@ -34,6 +34,7 @@
     font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
     color:var(--sub); position:absolute; top:78px; left:6vw; z-index:5;
   }
+  @media (max-width:900px){ .section-kicker{ display:none; } }
 
   @keyframes aptBob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-6px);} }
   @keyframes aptWalk{ 0%,100%{ transform:translateY(0) rotate(-2deg);} 50%{ transform:translateY(-9px) rotate(2deg);} }
@@ -156,7 +157,7 @@
       display:flex; align-items:center;
     }
     .story-journey{ padding:0 6vw; margin-top:0 !important; }
-    .journey-track{ margin-top:6px; }
+    .journey-track{ margin-top:130px; }
   }
   /* ---------- topbar cassette: set the mood ---------- */
   .topbar-right-group{ display:flex; align-items:center; gap:16px; }
