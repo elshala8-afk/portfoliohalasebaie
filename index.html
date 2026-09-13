@@ -408,6 +408,18 @@
   .pano-character.walking img{ animation:aptWalk .28s ease-in-out infinite; }
   .pano-character .shadow{ width:70%; height:14px; margin:0 auto; border-radius:50%; background:radial-gradient(ellipse, rgba(0,0,0,.28) 0%, transparent 72%); }
 
+  @media (max-width:760px){
+    .pano-character{ display:none; }
+    #panoImmersive .apt-nav{ display:none; }
+    .pano-wall{
+      position:static !important; transform:none !important; top:auto; height:76vh;
+      overflow-x:auto; -webkit-overflow-scrolling:touch; scroll-snap-type:x mandatory;
+    }
+    .pano-panel{ scroll-snap-align:start; }
+    .pano-immersive{ display:flex; align-items:center; }
+    .pano-ground{ display:none; }
+  }
+
   /* ---------- far layer: small distant illustrations, like layerFar in portou ---------- */
   .far-immersive{ position:relative; height:100vh; overflow:hidden; background:linear-gradient(180deg,#a9cfdd 0%,#cfe3d8 62%,#e7dcc0 100%); }
   .far-cloud{ position:absolute; background:rgba(255,255,255,.8); border-radius:50%; filter:blur(1px); z-index:1; }
@@ -1128,9 +1140,9 @@
   const mFlower = document.getElementById('mStFlower');
   const mCrayons = document.getElementById('mStCrayons');
   if(mTypewriter) mTypewriter.addEventListener('click', goToHistoire);
-  if(mComputer) mComputer.addEventListener('click', goToProjects);
+  if(mComputer) mComputer.addEventListener('click', ()=>{ window.location.href = 'projets.html'; });
   if(mFlower) mFlower.addEventListener('click', openNourishModal);
-  if(mCrayons) mCrayons.addEventListener('click', goToIllustrations);
+  if(mCrayons) mCrayons.addEventListener('click', ()=>{ window.location.href = 'illustrations.html'; });
 
   /* ---------- panorama: click-arrow walk, illustrations edge to edge at native square size ---------- */
   (function(){
